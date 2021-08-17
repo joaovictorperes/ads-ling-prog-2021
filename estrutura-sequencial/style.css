@@ -1,0 +1,78 @@
+/* estilo do corpo da página */
+body {
+  width: 800px; /* largura de página em pixels*/
+  margin: auto; /* espaçamento externo automático à esquerda e à direita.*/
+  margin-top: 50px; /* espaçamento externo superior */
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 20px; /* espaçamento interno nos quatro lados */
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  background-color: crimson;
+  color: white;
+  padding: 0.5rem;
+  width: 8rem;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0.5rem;
+  display: block;
+  border: black solid 0.1rem;
+}
+
+a:hover {
+  background-color: rgba(220, 20, 60, 0.876);
+}
+
+h1,
+h2 {
+  border-radius: 0.5rem;
+  border: 0.1rem black solid;
+  padding-left: 1rem;
+  color: white;
+  background-color: crimson;
+}
+
+h3 {
+  padding-left: 1rem;
+}
+
+button {
+  border-radius: 0.5px;
+}
+
+ol {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+/* estilo do cabeçalho do main */
+header {
+  margin-top: 10px;
+}
+
+footer {
+  padding-left: 1rem;
+}
+
+main {
+  margin-top: 20px;
+}
+
+ol {
+  list-style: none;
+}
+
+div {
+  margin-top: 20px;
+  padding-left: 1rem;
+}
+
+@media (max-width: 800px) {
+  body {
+    width: 430px;
+  }
+}
