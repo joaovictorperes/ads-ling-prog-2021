@@ -39,6 +39,8 @@ function exe02() {
     document.getElementById(
       'resultado'
     ).innerHTML = `O aluno foi aprovado com média: ${mediaAritmetica}`
+  } else {
+    document.getElementById('resultado').innerHTML = `As notas são inválidas`
   }
 }
 
