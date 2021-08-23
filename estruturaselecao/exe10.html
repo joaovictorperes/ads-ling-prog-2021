@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 10</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="../estrutura-sequencial/assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Preço final do carro</h1>
+      </div>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <th>Custo de Fábrica</th>
+          <th>% do distribuidor</th>
+          <th>% dos impostos</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Até R$12.000,00</td>
+            <td>5</td>
+            <td>Isento</td>
+          </tr>
+          <tr>
+            <td>Entre R$12.000,00 e R$25.000,00</td>
+            <td>10</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>Acima de R$25.000,00</td>
+            <td>15</td>
+            <td>20</td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <label for="preco-fabrica">Insira o valor do veículo de fábrica:</label>
+        <input type="number" id="preco-fabrica" />
+      </div>
+
+      <div>
+        <button type="button" onclick="exe10()">Calcular</button>
+      </div>
+      <div>
+        <p id="resultado"></p>
+      </div>
+    </main>
+    <footer>
+      Desenvolvido por alunos do 2° ciclo de ADS da Fatec Franca - agosto de
+      2021
+      <div>
+        <a href="../estrutura-sequencial/menu.html">Voltar ao menu principal</a>
+      </div>
+    </footer>
+  </body>
+</html>

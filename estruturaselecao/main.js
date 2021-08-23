@@ -183,3 +183,63 @@ function exe08() {
     'resultado'
   ).innerHTML = `O reajuste salarial é de: ${reajuste}`
 }
+
+function exe09() {
+  //Entrada de dados
+  let saldoMedio = Number(document.getElementById('saldo-medio').value)
+
+  //Processamento de dados
+  let credito
+
+  if (saldoMedio > 400) {
+    credito =
+      'Crédito com percentual de 30%: R$' + (saldoMedio * 0.3).toFixed(2)
+  } else if (saldoMedio > 300 && saldoMedio <= 400) {
+    credito =
+      'Crédito com percentual de 25%: R$' + (saldoMedio * 0.25).toFixed(2)
+  } else if (saldoMedio > 200 && saldoMedio <= 300) {
+    credito =
+      'Crédito com percentual de 20%: R$' + (saldoMedio * 0.2).toFixed(2)
+  } else if (saldoMedio <= 200) {
+    credito =
+      'Crédito com percentual de 10%: R$' + (saldoMedio * 0.1).toFixed(2)
+  }
+  //Saída de dados
+  document.getElementById(
+    'resultado'
+  ).innerHTML = `O saldo médio é de: R$${saldoMedio.toFixed(
+    2
+  )} </br> ${credito}`
+}
+
+function exe10() {
+  //Entrada de dados
+  let precoFabrica = Number(document.getElementById('preco-fabrica').value)
+
+  //Processamento de dados
+  let porcDistribuidor
+  let porcImpostos
+  let valorFinal
+
+  if (precoFabrica <= 12000) {
+    porcDistribuidor = precoFabrica * 0.05
+    porcImpostos = 0
+  } else if (precoFabrica > 12000 && precoFabrica <= 25000) {
+    porcDistribuidor = precoFabrica * 0.1
+    porcImpostos = precoFabrica * 0.15
+  } else if (precoFabrica > 25000) {
+    porcDistribuidor = precoFabrica * 0.15
+    porcImpostos = precoFabrica * 0.2
+  }
+
+  valorFinal = precoFabrica + porcDistribuidor + porcImpostos
+
+  //Saída de dados
+  document.getElementById(
+    'resultado'
+  ).innerHTML = `O valor final do automóvel é de: R$${valorFinal.toFixed(
+    2
+  )} </br> Valor do Distribuidor: R$${porcDistribuidor.toFixed(
+    2
+  )} </br> Impostos: R$${porcImpostos.toFixed(2)}`
+}
