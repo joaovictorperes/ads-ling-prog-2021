@@ -7,7 +7,8 @@
 body {
   width: 800px; /* largura de página em pixels*/
   margin: auto; /* espaçamento externo automático à esquerda e à direita.*/
-  margin: 0 1rem 0 1rem; /* espaçamento externo superior */
+  margin-top: 1rem; /* espaçamento externo superior */
+  margin-bottom: 1rem;
   border: 2px solid black;
   border-radius: 0.5rem;
   padding: 20px; /* espaçamento interno nos quatro lados */
