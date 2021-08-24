@@ -137,31 +137,31 @@ function exe06() {
   let numeroDois = Number(document.getElementById('numero-2').value)
 
   //Processamento de dados
-  let resultado0
-  let resultado1
-  let resultado2
+  let resultado // Ela serve daqui para baixo
 
-  if (operacao === 1) {
-    resultado0 = numeroUm ** numeroDois
-    document.getElementById(
-      'resultado'
-    ).innerHTML = `O resultado da operação: ${resultado0}`
-  } else if (operacao === 2) {
-    resultado1 = numeroUm ** (1 / 2)
-    resultado2 = numeroDois ** (1 / 2)
-  } else if (operacao === 3) {
-    resultado1 = numeroUm ** (1 / 3)
-    resultado2 = numeroDois ** (1 / 3)
+  //Math.sqrt() = RAIZ QUADRADA
+  //Math.cbrt() = RAIZ CÚBICA
+
+  switch (operacao) {
+    case 1:
+      resultado = `O resultado da operação: ${Math.pow(numeroUm, numeroDois)}`
+      break
+    case 2:
+      resultado = `O resultado da operação: ${Math.sqrt(numeroUm).toFixed(
+        2
+      )} e ${Math.sqrt(numeroDois).toFixed(2)}`
+      break
+    case 3:
+      resultado = `O resultado da operação: ${Math.cbrt(numeroUm).toFixed(
+        2
+      )} e ${Math.cbrt(numeroDois).toFixed(2)}`
+      break
+    default:
+      resultado = 'Valor Inválido'
   }
 
   //Saída de dados
-  if (operacao === 2 || operacao === 3) {
-    document.getElementById(
-      'resultado'
-    ).innerHTML = `O resultado da operação: ${resultado1.toFixed(
-      2
-    )} e ${resultado2.toFixed(2)}`
-  }
+  document.getElementById('resultado').innerHTML = resultado
 }
 
 function exe07() {
@@ -169,11 +169,17 @@ function exe07() {
 
   //Processamento de dados
   let msg
+  let reajuste
   if (sal >= 500) {
     msg = 'O salário não tem direito a reajuste'
   } else if (sal < 500) {
     let valorSal = sal * 1.3
-    msg = 'O salario tem direito a reajuste de: R$' + valorSal
+    reajuste = sal * 0.3
+    msg =
+      'O salario tem direito a reajuste de: R$' +
+      valorSal +
+      ', aumento de R$' +
+      reajuste
   }
 
   //Saída de dados
