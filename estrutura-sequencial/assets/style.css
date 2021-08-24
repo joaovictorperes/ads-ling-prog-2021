@@ -92,7 +92,7 @@ table {
   margin: 0 auto;
 }
 
-/*Estilo do botão*/
+/*Estilo do botão e select*/
 button {
   width: 10rem;
   height: 3rem;
@@ -104,6 +104,9 @@ button {
   color: var(--primary-color);
 }
 
+select {
+  margin: 1rem 0 0 0;
+}
 /*Medias queries*/
 @media (max-width: 800px) {
   body {

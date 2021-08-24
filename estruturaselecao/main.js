@@ -67,18 +67,25 @@ function exe04() {
   //Entrada de dados
   let numeroUm = Number(document.getElementById('numero-1').value)
   let numeroDois = Number(document.getElementById('numero-2').value)
+  let numeroTres = Number(document.getElementById('numero-3').value)
 
   //Processamento de dados
-  if (numeroUm > numeroDois) {
+  if (numeroUm === numeroDois && numeroDois === numeroTres) {
     document.getElementById(
       'resultado'
-    ).innerHTML = `O maior número é o primeiro: ${numeroUm}`
-  } else if (numeroUm < numeroDois) {
+    ).innerHTML = `Todos os números são iguais. Insira novamente.`
+  } else if (numeroUm > numeroDois && numeroUm > numeroTres) {
     document.getElementById(
       'resultado'
-    ).innerHTML = `O maior número é o segundo: ${numeroDois}`
-  } else if (numeroDois === numeroDois) {
-    document.getElementById('resultado').innerHTML = `Os números são iguais`
+    ).innerHTML = `O maior número é o: ${numeroUm}`
+  } else if (numeroDois > numeroTres) {
+    document.getElementById(
+      'resultado'
+    ).innerHTML = `O maior número é o: ${numeroDois}`
+  } else {
+    document.getElementById(
+      'resultado'
+    ).innerHTML = `O maior número é o: ${numeroTres}`
   }
 }
 
@@ -91,20 +98,30 @@ function exe05() {
   //Operações
   let resultado
 
-  if (operacao === 1) {
-    resultado = (numeroUm + numeroDois) / 2
-  } else if (operacao === 2) {
-    if (numeroUm > numeroDois) {
-      resultado = numeroUm - numeroDois
-    } else if (numeroDois > numeroUm) {
-      resultado = numeroDois - numeroUm
-    } else {
-      resultado = 'Valores inválidos'
-    }
-  } else if (operacao === 3) {
-    resultado = numeroUm * numeroDois
-  } else if (operacao === 4) {
-    resultado = numeroUm / numeroDois
+  switch (operacao) {
+    case 1:
+      resultado = (numeroUm + numeroDois) / 2
+      break
+    case 2:
+      if (numeroUm > numeroDois) {
+        resultado = numeroUm - numeroDois
+      } else if (numeroDois > numeroUm) {
+        resultado = numeroDois - numeroUm
+      } else {
+        resultado = 'Valores inválidos'
+      }
+      break
+    case 3:
+      resultado = numeroUm * numeroDois
+      break
+    case 4:
+      if (numeroDois != 0) {
+        resultado = numeroUm / numeroDois
+      } else {
+        resultado = 'Divisão por zero'
+      }
+
+      break
   }
 
   //Saída de dados
