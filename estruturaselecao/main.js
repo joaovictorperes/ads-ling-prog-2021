@@ -266,3 +266,63 @@ function exe10() {
     2
   )} </br> Impostos: R$${porcImpostos.toFixed(2)}`
 }
+
+function exe11() {
+  //Entradas de dados
+  let sal = Number(document.getElementById('salario').value)
+
+  //Processamento de dados
+  let reajusteSal
+  let aumento
+
+  if (sal <= 300) {
+    aumento = (sal * 0.15).toFixed(2)
+    reajusteSal = sal * 1.15
+  } else if (sal > 300 && sal < 600) {
+    aumento = (sal * 0.1).toFixed(2)
+    reajusteSal = sal * 1.1
+  } else if (sal >= 600 && sal <= 900) {
+    aumento = (sal * 0.05).toFixed(2)
+    reajusteSal = sal * 1.05
+  } else if (sal > 900) {
+    aumento = 0 + ' | Não haverá aumento salarial.'
+    reajusteSal = sal
+  }
+
+  //Saída de dados
+  document.getElementById(
+    'resultado'
+  ).innerHTML = `O aumento salarial será de: R$${aumento} </br> Salário Final: R$${reajusteSal.toFixed(
+    2
+  )}`
+}
+
+function exe12() {
+  //Entradas de dados
+  let sal = Number(document.getElementById('salario').value)
+
+  //Processamento de dados
+  let reajusteSal
+  let aumento
+
+  if (sal <= 350) {
+    imposto = (sal + 100) * 0.07
+    reajusteSal = sal - imposto + 100
+  } else if (sal > 350 && sal < 600) {
+    imposto = (sal + 75) * 0.07
+    reajusteSal = sal + 75 - imposto
+  } else if (sal >= 600 && sal <= 900) {
+    imposto = (sal + 50) * 0.07
+    reajusteSal = sal + 50 - imposto
+  } else if (sal > 900) {
+    imposto = (sal + 35) * 0.07
+    reajusteSal = sal + 35 - imposto
+  }
+
+  //Saída de dados
+  document.getElementById(
+    'resultado'
+  ).innerHTML = `O imposto sobre o salário será de: R$${imposto.toFixed(
+    2
+  )} </br> Salário Final: R$${reajusteSal.toFixed(2)}`
+}
