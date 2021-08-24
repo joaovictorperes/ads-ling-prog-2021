@@ -7,9 +7,9 @@
 body {
   width: 800px; /* largura de página em pixels*/
   margin: auto; /* espaçamento externo automático à esquerda e à direita.*/
-  margin-top: 50px; /* espaçamento externo superior */
+  margin: 0 1rem 0 1rem; /* espaçamento externo superior */
   border: 2px solid black;
-  border-radius: 25px;
+  border-radius: 0.5rem;
   padding: 20px; /* espaçamento interno nos quatro lados */
   box-sizing: border-box;
   font-family: sans-serif;
