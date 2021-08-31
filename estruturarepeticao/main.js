@@ -96,6 +96,25 @@ function exe003() {
   )
 }
 
+function exe005() {
+  let contador1 = 0
+  let tabuada = 0
+  alert('TABUADA 0 A 10:')
+  while (contador1 <= 10) {
+    let contador2 = 0
+
+    while (contador2 <= 10) {
+      tabuada += `${contador1} X ${contador2} = ${contador1 * contador2}\n`
+      contador2++
+    }
+    tabuada += '\n'
+    contador1++
+  }
+
+  //Saída de dados
+  alert(tabuada)
+}
+
 function exe006() {
   let cont = 1
   let valorVista = 0
