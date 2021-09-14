@@ -153,6 +153,8 @@ function exe006() {
 
 function exe023() {
   let opcao
+  let salario
+  let novoSalario
 
   do {
     opcao = Number(
@@ -162,8 +164,8 @@ function exe023() {
     )
     switch (opcao) {
       case 1:
-        let salario = Number(prompt(`Informe o salário`))
-        let novoSalario
+        salario = Number(prompt(`Informe o salário`))
+        novoSalario
 
         if (salario < 210) {
           novoSalario = salario + (15 * salario) / 100
