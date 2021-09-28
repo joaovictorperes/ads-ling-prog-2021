@@ -1,9 +1,9 @@
 function exe01() {
   //Entrada de dados
-  let notaUm = Number(document.getElementById('nota-1').value)
-  let notaDois = Number(document.getElementById('nota-2').value)
-  let notaTres = Number(document.getElementById('nota-3').value)
-  let notaQuatro = Number(document.getElementById('nota-4').value)
+  let notaUm = Number(document.getElementById('nota-1').value);
+  let notaDois = Number(document.getElementById('nota-2').value);
+  let notaTres = Number(document.getElementById('nota-3').value);
+  let notaQuatro = Number(document.getElementById('nota-4').value);
 
   //Processamento de dados
   let mediaAritmetica = (notaUm + notaDois + notaTres + notaQuatro) / 4
@@ -325,4 +325,11 @@ function exe12() {
   ).innerHTML = `O imposto sobre o salário será de: R$${imposto.toFixed(
     2
   )} </br> Salário Final: R$${reajusteSal.toFixed(2)}`
+}
+
+let a 
+
+for (let index = 0; index < array.length; index++) {
+  const element = array[index];
+  
 }
