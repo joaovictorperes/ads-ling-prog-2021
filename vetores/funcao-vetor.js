@@ -181,3 +181,67 @@ function ex05vetor() {
   alert(`Matrículas Lógica:\n${logiMatri}\n\nMatrículas Linguagem de Programação:\n${lingMatri}`)
   alert(`Quantidade de alunos que cursam as duas disciplinas: ${cursaAmbos}`)
 }
+
+// //Outra forma de resolução
+// function exe05teste() {
+//   let vetLogica = new Array(15)
+//   let vetLp = new Array(10)
+//   let interseccao = []
+
+//   //Entrada de dados
+//   for (let i = 0; i < 15; i++) {
+//     vetLogica[i] = Number(prompt(`Informe código de matrícula do aluno que faz Lógica.`));
+    
+//   }
+//   for (let i = 0; i < 10; i++) {
+//     vetLp[i] = Number(prompt(`Informe código de matrícula do aluno que faz Linguagem de Programação.`));
+    
+//   }
+
+//   for (let i=0; i<15; i++) {
+//     for (let j=0; j<10; j++) {
+//       if (ling[i] === logica[j]) {
+//         interseccao.push(j)
+//       }
+//     }
+//   }
+// }
+
+function ex06vetor() {
+  //Declaração de variáveis
+  let vetNomes = new Array(10)
+  let vetVendas = new Array(10)
+  let vetComissao = new Array(10)
+
+  for(let i=0;i<10;i++) {
+    vetNomes[i] = prompt(`Informe o nome do vendedor ${i+1}`)
+    vetVendas[i] = Number(prompt(`Informe o total de vendas do vendedor ${i+1}`))
+    vetComissao[i] = Number(prompt(`Informe o % de comissão do vendedor ${i+1}`))
+  }
+  
+  let totalVendas = 0
+  let maior = 0
+  let nomeMaior = ""
+  let menor = 100000
+  let nomeMenor = ""
+
+  for (let i = 0; i < 10; i++) {
+    let receber = (vetVendas[i] *vetComissao[i]/100);
+    if(receber > maior) {
+      maior = receber
+      nomeMaior = vetNomes[i]
+    }
+
+    if (receber < menor) {
+      menor = receber
+      nomeMenor = vetNomes[i]
+    }
+
+    alert(`O vendedor ${vetNomes[i]} vair receber ${receber}`)
+    totalVendas = totalVendas + vetVendas[i]
+  }
+
+  alert(`O total de vendas foi de ${totalVendas}`)
+  alert(`O maior valor a receber é ${nomeMaior}`)
+  alert(`O menor valor a receber é ${nomeMenor}`)
+}
