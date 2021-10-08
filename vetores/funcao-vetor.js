@@ -245,3 +245,239 @@ function ex06vetor() {
   alert(`O maior valor a receber é ${nomeMaior}`)
   alert(`O menor valor a receber é ${nomeMenor}`)
 }
+
+function ex07vetor() {
+  //Declaração de variáveis
+  let numeros = new Array(10)
+  let positivos = []
+  let somaPositivo = 0
+  let negativos = 0
+  
+  //Entrada de dados
+  for (let i=0; i < 10; i++) {
+    numeros[i] = Number(prompt(`Insira um número positivo ou negativo. NÚMERO ${i+1}:`))
+
+    if (numeros[i] >= 0) {
+      positivos.push(numeros[i])
+    } else {
+      negativos++
+    }
+  }
+
+  for (let i = 0; i < positivos.length; i++) { //Soma dos valores positivos
+    somaPositivo += positivos[i]
+  }
+
+  //Saída de dados
+  alert(`A soma total dos números positivos é de: ${somaPositivo}\n\nA quantidade de números negativos: ${negativos}`)  
+}
+
+function ex08vetor() { //Não terminado
+  //Declaração de variáveis
+  let alunos = new Array(7)
+  let medias = new Array(7)
+  let maiorMedia
+
+  //Entrada de dados
+  for (let i = 0; i < alunos.length; i++) {
+    alunos[i] = prompt(`Insira o nome do aluno ${i+1}:`)
+    medias[i] = Number(prompt("Insira a sua média:"))
+    
+    if (medias[i] < 7) { //Verificar média insuficiente
+      
+    }
+  }
+
+  for (let i = 0; i < alunos.length; i++) { //Conferir qual a maior média entre os alunos
+    for (let j = 0; j < alunos.length; j++) {
+      if (alunos[i] > alunos[j]) {
+        maiorMedia = alunos[i]
+      }
+    }
+  }
+}
+ 
+function ex09vetor() {
+  //Declaração de variáveis
+  let nomes = new Array(10)
+  let codigos = new Array(10)
+  let precos = new Array(10)
+  let precoNovo = []
+  let tabela = ""
+
+  //Entrada de dados
+  for (let i = 0; i < 3; i++) {
+    nomes[i] = prompt(`Informe o nome do produto ${i+1}`)
+    codigos[i] = Number(prompt(`Informe o código do produto ${i+1}`))
+    precos[i] = Number(prompt(`Informe o preço do produto ${i+1}`))
+
+    tabela += `Nome: ${nomes[i]} / Código: ${codigos[i]} / Preço: ${precos[i]}`
+  
+    if (precos[i] > 1000 && codigos[i] % 2 === 0) {
+      precoNovo[i] = precos[i] * 1.20
+      tabela += ` / Preço com aumento: ${(precoNovo[i]).toFixed(2)}`
+    } else if (codigos[i] % 2 === 0) {
+      precoNovo[i] = precos[i] * 1.15 
+      tabela += ` / Preço com aumento: ${(precoNovo[i]).toFixed(2)}`
+    } else if (precos[i] > 1000) {
+      precoNovo[i] = precos[i] * 1.10
+      tabela += ` / Preço com aumento: ${(precoNovo[i]).toFixed(2)}`
+    } 
+    
+    tabela += "\n\n"
+  }
+  
+  alert(tabela)
+}
+
+function ex10vetor() {
+  //Declaração de variáveis
+  let vetor1 = new Array(10);
+  let vetor2 = new Array(5);
+  let vetorResultante1 = [];
+  let vetorResultante2 = [];
+  let somaVetor2 = 0
+
+  let textoPar = ""
+  let textoImpar = ""
+
+  //Saída de dados
+  for (let i = 0; i < 10; i++) {
+    vetor1[i] = Number(prompt(`Insira o ${i+1}ª número do vetor 1.`))
+  }
+
+  for (let i = 0; i < 5; i++) {
+    vetor2[i] = Number(prompt(`Insira o ${i+1}ª número do vetor 2.`))
+    somaVetor2 += vetor2[i]
+  }
+
+  //Processamento de dados
+  for (let i = 0; i < vetor1.length; i++) {
+    if(vetor1[i] % 2 === 0) {
+      vetorResultante1.push(vetor1[i] + somaVetor2)
+      textoPar += `Numero ${vetor1[i]}: ${vetor1[i] + somaVetor2}\n`
+    } else {
+      let divisorCont =  0
+      for (let j = 0; j < vetor2.length; j++) {
+        if ( vetor1[i] % vetor2[j] === 0) {
+          divisorCont++
+        }    
+      }
+
+      vetorResultante2.push(divisorCont)
+      textoImpar += `Numero ${vetor1[i]}: ${divisorCont}\n`
+
+    }
+  }
+
+  //Saída de dados
+  alert(`Cada número do vetor 1 somado com todos do vetor 2:\n${textoPar}\nQuantidade de divisores do número ímpar do vetor 1 pelo vetor 2:\n${textoImpar}`)
+}
+
+function ex11vetor() {
+  //Declaração de variáveis
+  let numeros = new Array(10)
+  let pares = []
+  let impares = []
+
+  //Entrada de dados
+  for (let i = 0; i < 10; i++) {
+    numeros[i] = parseInt(prompt(`Digito o ${i+1}ª número:`))
+
+    if(numeros[i] % 2 === 0) {
+      pares.push(numeros[i])
+    } else {
+      impares.push(numeros[i])
+    }
+  }
+
+  //Saída de dados
+  alert(`Números pares: ${pares}\n\nNúmeros ímpares: ${impares}`)
+}
+
+function ex12vetor() {
+  //Declaração de variáveis
+  let num = new Array(5)
+  let soma = 0
+
+  //Entrada de dados
+  for (let i = 0; i < 5; i++) {
+    num[i] = Number(prompt(`Digite o ${i+1} número:`))
+    soma += num[i]
+  }
+
+  //Saída de dados
+  alert(`Os números digitados foram: ${num[0]} + ${num[1]} + ${num[2]} + ${num[3]} + ${num[4]} = ${soma}`)
+}
+
+function ex13vetor() {
+  //Declaração de variáveis
+  let nomes = new Array(8)
+  let notas = new Array(8)
+  let relatorio = "RELATÓRIO\n\n"
+  let somaNotas = 0
+  let mediaNotas
+
+  //Entrada de dados
+  for (let i = 0; i < 8; i++) {
+    nomes[i] = prompt(`Digite o nome do ${i+1}ª aluno:`)
+    notas[i] = Number(prompt(`Digite a nota do aluno(a) ${nomes[i]}:`))
+    somaNotas += notas[i]
+    relatorio += `${nomes[i]} : ${notas[i]}\n`
+  }
+
+  //Processamento de dados
+  mediaNotas = somaNotas / 8
+
+  //Saída de dados
+  alert(`${relatorio}\nMédia da Classe: ${mediaNotas.toFixed(2)}`)
+}
+
+function ex14vetor() {
+  //Como não foi informada a média mínima para aprovação, será considerada como 5.
+  //Declaração de variáveis
+  let alunos = new Array(6)
+  let nota1 = new Array(6)
+  let nota2 = new Array(6)
+
+  let relatorio = "RELATÓRIO\nALUNO / 1ªPROVA / 2ªPROVA / MÉDIA / SITUAÇÂO\n"
+  let somaNotas = 0
+  let mediaTotal
+  let mediaAluno
+  let situacao
+
+  let aprovado = 0
+  let reprovado = 0
+  let aprovPorc
+  let reprovPorc
+
+  //Entrada de dados
+  for (let i = 0; i < 6; i++) {
+    alunos[i] = prompt(`Digite o nome do ${i+1}ª aluno:`)
+    nota1[i] = Number(prompt(`Digite a primeira nota do aluno(a) ${alunos[i]}`))
+    nota2[i] = Number(prompt(`Digite a segunda nota do aluno(a) ${alunos[i]}`))  
+    
+    //Processamento de dados
+    mediaAluno = (nota1[i] + nota2[i]) / 2
+    somaNotas += mediaAluno
+    if (mediaAluno >= 5) {
+      situacao = "APROVADO"
+      aprovado++
+    } else {
+      situacao = "REPROVADO"
+      reprovado++
+    }
+
+    relatorio += `${alunos[i]} -- ${nota1[i]} --  ${nota2[i]} -- ${mediaAluno} -- ${situacao}\n`
+    
+  }
+
+  mediaTotal = somaNotas / 6
+  aprovPorc = (aprovado / 6) * 100
+  reprovPorc = (reprovado / 6) * 100
+
+  //Saída de dados
+  alert(`${relatorio}\nMédia total da classe: ${mediaTotal.toFixed(2)}\nPorcentagam de alunos aprovados: ${aprovPorc.toFixed(2)}%\nPorcentagem de alunos reprovados: ${reprovPorc.toFixed(2)}%`)
+
+
+}
