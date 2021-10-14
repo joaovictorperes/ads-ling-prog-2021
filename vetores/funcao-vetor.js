@@ -476,8 +476,7 @@ function ex14vetor() {
       reprovado++
     }
 
-    relatorio += `${alunos[i]} -- ${nota1[i]} --  ${nota2[i]} -- ${mediaAluno} -- ${situacao}\n`
-    
+    relatorio += `${alunos[i]} -- ${nota1[i]} --  ${nota2[i]} -- ${mediaAluno} -- ${situacao}\n`  
   }
 
   mediaTotal = somaNotas / 6
@@ -486,6 +485,4 @@ function ex14vetor() {
 
   //Saída de dados
   alert(`${relatorio}\nMédia total da classe: ${mediaTotal.toFixed(2)}\nPorcentagam de alunos aprovados: ${aprovPorc.toFixed(2)}%\nPorcentagem de alunos reprovados: ${reprovPorc.toFixed(2)}%`)
-
-
 }
