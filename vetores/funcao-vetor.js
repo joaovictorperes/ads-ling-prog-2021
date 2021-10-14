@@ -272,29 +272,37 @@ function ex07vetor() {
   alert(`A soma total dos números positivos é de: ${somaPositivo}\n\nA quantidade de números negativos: ${negativos}`)  
 }
 
-function ex08vetor() { //Não terminado
+function ex08vetor() { 
   //Declaração de variáveis
   let alunos = new Array(7)
   let medias = new Array(7)
-  let maiorMedia
+  let maiorMedia = 0
+  let maiorMediaResultado = ""
+  let mediaNota
+  let relatorio = "RELATÓRIO DA SALA\n"
 
   //Entrada de dados
   for (let i = 0; i < alunos.length; i++) {
     alunos[i] = prompt(`Insira o nome do aluno ${i+1}:`)
     medias[i] = Number(prompt("Insira a sua média:"))
+
+    if (maiorMedia < medias[i]) { //Verificar maior média
+      maiorMedia = medias[i]
+      maiorMediaResultado = `aluno ${alunos[i]} com média ${(maiorMedia).toFixed(2)}`
+    }
+    
+    relatorio += `\n\nAluno(a) ${alunos[i]} tirou média ${medias[i]}. `
     
     if (medias[i] < 7) { //Verificar média insuficiente
-      
+     mediaNota = 10 - medias[i]
+     relatorio += `\nSerá necessário fazer exame final e tirar no mínimo ${mediaNota}`
     }
   }
 
-  for (let i = 0; i < alunos.length; i++) { //Conferir qual a maior média entre os alunos
-    for (let j = 0; j < alunos.length; j++) {
-      if (alunos[i] > alunos[j]) {
-        maiorMedia = alunos[i]
-      }
-    }
-  }
+  //Saída de dados
+  alert(relatorio)
+  alert(`A maior média foi do ${maiorMediaResultado}`)
+
 }
  
 function ex09vetor() {
