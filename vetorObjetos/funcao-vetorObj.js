@@ -1,3 +1,5 @@
+//Exercícios de vetor alterados para vetor Objeto
+
 function ex01vetor() {
   //declarar os valores
   let numeros = []
@@ -305,31 +307,32 @@ function ex08vetor() {
 
 }
  
-function ex09vetor() {
+function ex09vetorObj() {
   //Declaração de variáveis
-  let nomes = new Array(10)
-  let codigos = new Array(10)
-  let precos = new Array(10)
-  let precoNovo = []
+  let vetor = new Array(10)
   let tabela = ""
 
   //Entrada de dados
   for (let i = 0; i < 10; i++) {
-    nomes[i] = prompt(`Informe o nome do produto ${i+1}`)
-    codigos[i] = Number(prompt(`Informe o código do produto ${i+1}`))
-    precos[i] = Number(prompt(`Informe o preço do produto ${i+1}`))
+    let objeto = {
+      nome: prompt(`Informe o nome do produto ${i+1}`),
+      codigo: Number(prompt(`Informe o código do produto ${i+1}`)),
+      preco: Number(prompt(`Informe o preço do produto ${i+1}`))
+    }
 
-    tabela += `Nome: ${nomes[i]} / Código: ${codigos[i]} / Preço: ${precos[i]}`
-  
-    if (precos[i] > 1000 && codigos[i] % 2 === 0) {
-      precoNovo[i] = precos[i] * 1.20
-      tabela += ` / Preço com aumento: ${(precoNovo[i]).toFixed(2)}`
-    } else if (codigos[i] % 2 === 0) {
-      precoNovo[i] = precos[i] * 1.15 
-      tabela += ` / Preço com aumento: ${(precoNovo[i]).toFixed(2)}`
-    } else if (precos[i] > 1000) {
-      precoNovo[i] = precos[i] * 1.10
-      tabela += ` / Preço com aumento: ${(precoNovo[i]).toFixed(2)}`
+    vetor[i] = objeto //Adiciona o objeto no array
+
+    tabela += `Nome: ${vetor[i].nome} / Código: ${vetor[i].codigo} / Preço: ${vetor[i].preco}`
+
+    if (vetor[i].preco > 1000 && vetor[i].codigo % 2 === 0) {
+      vetor[i].precoNovo = vetor[i].preco * 1.20
+      tabela += ` / Preço com aumento: ${(vetor[i].precoNovo).toFixed(2)}`
+    } else if (vetor[i].codigo % 2 === 0) {
+      vetor[i].precoNovo = vetor[i].preco * 1.15 
+      tabela += ` / Preço com aumento: ${(vetor[i].precoNovo).toFixed(2)}`
+    } else if (vetor[i].preco > 1000) {
+      vetor[i].precoNovo = vetor[i].preco * 1.10
+      tabela += ` / Preço com aumento: ${(vetor[i].precoNovo).toFixed(2)}`
     } 
     
     tabela += "\n\n"
