@@ -236,17 +236,27 @@ function exe01vetObj() {
                 valor: Number(prompt("informe o valor da venda"))
               }
 
-              let achou2 = false
-              for (let i = 0; i < vetVendas.length; i++) {
-                if ((vetVendas[i].vendedor == objeto2.vendedor) && (vetVendas[i].mes == objeto2.mes)) {
-                  achou2 = true
+              let achou22 = false
+              for (let i=0;i<vetVendedores.length; i++) {
+                if (vetVendedores[i].codigo == objeto2.vendedor) {
+                  achou22 = true
                 }
               }
-              if (achou2) {
-                alert("Já existe uma venda deste vendedor neste mês.")
+              if (!achou22) {
+                alert("Vendedor não existe.")
               } else {
-                vetVendas.push(objeto2)
-                alert("Venda cadastrada com sucesso.")
+                let achou2 = false
+                for (let i=0; i<vetVendas.length; i++) {
+                  if ((vetVendas[i].vendedor == objeto2.vendedor) && (vetVendas[i].mes == objeto2.mes)) {
+                    achou2 = true
+                  }
+                }
+                if (achou2) {
+                  alert("Já existe uma venda deste vendedor neste mês.")
+                } else {
+                  vetVendas.push(objeto2)
+                  alert("Venda cadastrada com sucesso.")
+                }
               }
             break
       case 3: 
@@ -281,40 +291,40 @@ function exe01vetObj() {
             break
       case 5: 
               let mesInteresse2 = Number(prompt("Informe o mês de interesse:"))
-              let maiorVenda = 0
+              let maiorVenda1 = 0
               let quemVendeu = ""
               let achou5
 
               for (let i=0; i<vetVendas.length;i++) {
                 if (vetVendas[i].mes == mesInteresse2) {
-                  if (vetVendas[i].valor > maiorVenda) {
-                    maiorVenda = vetVendas[i].valor
+                  if (vetVendas[i].valor > maiorVenda1) {
+                    maiorVenda1 = vetVendas[i].valor
                     quemVendeu = vetVendas[i].vendedor
                   }
                 }
               }
               if (achou5) {
-                alert(`A maior venda no mês ${mesInteresse2} foi de ${quemVendeu} no valor de ${maiorVenda}`)
+                alert(`A maior venda no mês ${mesInteresse2} foi de ${quemVendeu} no valor de ${maiorVenda1}`)
               } else {
                 alert("Não existe venda no mês informado.")
               }
             break
       case 6:
               let vendasMes = [0,0,0,0,0,0,0,0,0,0,0,0] // zero neutraliza a soma
-              for (let i=0; i<vetVendas; i++) {
+              for (let i=0; i<vetVendas.length; i++) {
                 let posicao = vetVendas[i].mes - 1
                 vendasMes[posicao] = vendasMes[posicao] + vetVendas[i].valor
               }
               // procurar o mês com maior venda
-              let maiorVenda = 0
-              let maiorMes
+              let maiorVenda2 = 0
+              let maiorMes = 0
               for (let i=0; i<vendasMes.length; i++) {
-                if (vendasMes[i] > maiorVenda) {
-                  maiorVenda = vendasMes
+                if (vendasMes[i] > maiorVenda2) {
+                  maiorVenda2 = vendasMes
                   maiorMes = i + 1
                 }
               }
-              alert(`O mês ${maiorMes} teve a maior venda de ${maiorVenda}.`)
+              alert(`O mês ${maiorMes} teve a maior venda de ${maiorVenda2}.`)
         break
       case 7: alert("Finalizando o programa...")
         break
